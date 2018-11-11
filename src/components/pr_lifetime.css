@@ -1,0 +1,12 @@
+.pr-lifetime > div {
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+    height: calc(100% - 25px);
+}
+
+.pr-lifetime > div > p {
+    font-size: 50pt;
+    text-align: center;
+    width: 100%;
+}
