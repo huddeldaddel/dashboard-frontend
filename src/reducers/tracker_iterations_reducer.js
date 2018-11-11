@@ -5,7 +5,6 @@ export default function(state={}, action) {
     case LOAD_CURRENT_ITERATION: {
       let result = { current: action.payload.data };
       result[action.payload.data.number] = action.payload.data;
-      console.log(LOAD_CURRENT_ITERATION, result);
       return result;
     }
     case LOAD_ITERATION: {

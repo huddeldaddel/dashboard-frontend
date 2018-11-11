@@ -1,5 +1,7 @@
 import React, { Component} from 'react';
 
+import PRLabel from './pr_label';
+
 import './oldest_pull_requests.css';
 
 export default class OldestPullRequest extends Component {
@@ -58,7 +60,7 @@ export default class OldestPullRequest extends Component {
           <td style={this.getCellStyle(0.1)} className="age num">{age} h</td>
           <td style={this.getCellStyle(0.6)} className="name">{trackerLink} {githubLink} {pr.title}</td>
           <td style={this.getCellStyle(0.15)} className="repo">{pr.head.repo.name}</td>
-          <td style={this.getCellStyle(0.15)} className="user">{pr.user.login}</td>
+          <td style={this.getCellStyle(0.15)} className="label">{pr.labels.map(l => <PRLabel label={l}></PRLabel>)}</td>
         </tr>
       );
     });
@@ -72,7 +74,7 @@ export default class OldestPullRequest extends Component {
               <th className="num">Age</th>
               <th>Name</th>
               <th>Repo</th>
-              <th>Author</th>
+              <th>Labels</th>
             </tr>
           </thead>
           <tbody>
