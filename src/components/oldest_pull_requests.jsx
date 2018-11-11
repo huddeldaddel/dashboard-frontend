@@ -24,7 +24,7 @@ export default class OldestPullRequest extends Component {
   getTrackerLink(label) {
     const matches = label.match(/\d{6,12}/);
     if(!matches || 1 !== label.match(/\d{6,12}/).length)
-      return undefined;
+      return <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" width="11px" />;
     return (
       <a href={`https://www.pivotaltracker.com/story/show/${label.match(/\d{6,12}/)}`}
          target="_blank"><img src="http://pivotaltracker.com/favicon.ico" width="11px" /></a>
