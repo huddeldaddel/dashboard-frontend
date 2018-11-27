@@ -11,9 +11,8 @@ import CurrentSprintOverview from './current_sprint_overview';
 import OldestPullRequest from './oldest_pull_requests';
 import PullRequestPerRepo from './pullrequests_per_repo';
 import PRLifetime from './pr_lifetime';
-import SprintHistory from './sprint_history';
+import StoryPointDistribution from './story_point_distribution';
 import './App.css';
-import {CONFIG} from '../../config';
 
 class App extends Component {
   
@@ -23,13 +22,6 @@ class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    if(!!this.props.iterations.current && !prevProps.iterations.current) {
-      for(var i=1; i<6; i++) {
-        if(this.props.iterations.current.number > i)
-          this.props.loadTrackerIteration(this.props.iterations.current.number - i);
-      }
-    }
-
     if(( 0 < this.props.repositories.length) && (0 === prevProps.repositories.length)) {
       this.props.repositories.forEach(element => {
         this.props.loadPullRequests(element);
@@ -40,7 +32,7 @@ class App extends Component {
   render() {
     return(
       <div className="App">
-          <SprintHistory sprints={this.props.iterations}></SprintHistory>          
+          <StoryPointDistribution sprint={this.props.iterations.current}></StoryPointDistribution>          
           <CurrentSprintOverview sprint={this.props.iterations.current}></CurrentSprintOverview>
           <BugLifetime sprint={this.props.iterations.current}></BugLifetime>
           <OldestPullRequest pullRequests={this.props.pullRequests} repositories={this.props.repositories}></OldestPullRequest>
