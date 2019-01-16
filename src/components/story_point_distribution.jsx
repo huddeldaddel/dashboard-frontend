@@ -62,7 +62,7 @@ export default class StoryPointDistribution extends Component {
 
     return (
       <div className="story-point-distribution" ref={this.container}>
-        <h3>Story Point distribution ({ !!this.props.sprint ? this.props.sprint.stories.length : 0} total)</h3>
+        <h3>Story Point distribution ({ !!this.props.sprint ? this.props.sprint.stories.length : 0} tickets)</h3>
         { chart }
       </div>
     );
