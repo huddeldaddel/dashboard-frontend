@@ -17,8 +17,12 @@ import './App.css';
 class App extends Component {
   
   componentDidMount() {
-    this.props.loadCurrentTrackerIteration();
-    this.props.loadRepositories();
+    const load = () => {
+      this.props.loadCurrentTrackerIteration();
+      this.props.loadRepositories();
+    };
+    setInterval(() => { load(); }, 60000);
+    load();
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
