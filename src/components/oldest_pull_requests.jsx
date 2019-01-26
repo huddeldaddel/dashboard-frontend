@@ -60,7 +60,7 @@ export default class OldestPullRequest extends Component {
           <td style={this.getCellStyle(0.1)} className="age num">{age} h</td>
           <td style={this.getCellStyle(0.6)} className="name">{trackerLink} {githubLink} {pr.title}</td>
           <td style={this.getCellStyle(0.15)} className="repo">{pr.head.repo.name}</td>
-          <td style={this.getCellStyle(0.15)} className="label">{pr.labels.map(l => <PRLabel label={l}></PRLabel>)}</td>
+          <td style={this.getCellStyle(0.15)} className="label">{pr.labels.map(l => <PRLabel key={l.id} label={l}></PRLabel>)}</td>
         </tr>
       );
     });
