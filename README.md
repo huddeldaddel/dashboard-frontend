@@ -32,13 +32,10 @@ This repository contains the frontend code of the dashboard.
 The frontend has a configuration file called `config.js` that is located in the root folder of the application. It looks something like like:
 
 `export const CONFIG = {
-    serverUrl: '',
-    trackerProject: 1234567
+    serverUrl: ''
 };`
 
 When running the frontend locally (using `npm run start`) against a local backend system, you might want to set the serverUrl prooperty to something like 'http://localhost:8080', where 8080 is the port of your backend. The value for production should be just an empty string. This will send all REST requests to the backend server that served the HTML file for the frontend. 
-
-The trackerProject property should be set to the ID of the tracker project. It will be used to generate links to that project.
 
 ### Running the code
 
