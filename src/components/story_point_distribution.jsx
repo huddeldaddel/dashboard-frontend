@@ -16,11 +16,12 @@ export default class StoryPointDistribution extends Component {
   }
 
   componentDidMount() {
-    const { offsetWidth, offsetHeight } = this.container.current;
-    this.setState({
-      offsetWidth,
-      offsetHeight
-    });
+    const updateDimensions = () => {
+      const { offsetWidth, offsetHeight } = this.container.current;
+      this.setState({ offsetWidth, offsetHeight });
+    }
+    window.addEventListener("resize", updateDimensions);
+    updateDimensions();
   }
 
   render() {
