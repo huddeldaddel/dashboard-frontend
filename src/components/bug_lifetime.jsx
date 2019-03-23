@@ -37,7 +37,7 @@ export default class BugLifetime extends Component {
     sprint.stories
       .filter((s) => s.kind === 'story' && s.story_type === 'bug')
       .map((story) => BugLifetime.calculateAge(story, sprint))
-      .forEach(age => {
+      .forEach((age) => {
         sum += age;
         count++;
       });
